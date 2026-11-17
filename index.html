@@ -6,3 +6,4 @@ const chapters=[{title:'The Unexpected Beginning',place:'Ennis & Dallas',intro:'
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));let n=0;document.getElementById('chapters').innerHTML=chapters.map((c,i)=>`<section class="chapter" id="chapter-${i+1}"><div class="eyebrow">Chapter ${i+1} · ${esc(c.place)}</div><h2>${esc(c.title)}</h2><p class="intro">${esc(c.intro)}</p>${c.songs.map(s=>`<article class="track"><div class="eyebrow">Song ${++n} of 16</div><h3>${esc(s[0])}</h3><div class="artist">${esc(s[1])}</div><p>“${esc(s[2])}”</p><a href="https://www.youtube.com/results?search_query=${encodeURIComponent(s[1]+' '+s[0]+' official audio')}" target="_blank" rel="noopener noreferrer">Find this song on YouTube ↗</a></article>`).join('')}</section>`).join('');
 </script></body></html>
 
+
